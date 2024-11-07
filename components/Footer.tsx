@@ -21,7 +21,7 @@ function Footer() {
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold">LET'S GET SOCIAL</h2>
+          <h2 className="text-lg font-semibold">GET SOCIALS</h2>
           <div className="flex gap-4 mt-8">
             <FaInstagram className="text-2xl cursor-pointer hover:text-gray-300" />
             <FaFacebookF className="text-2xl cursor-pointer hover:text-gray-300" />
