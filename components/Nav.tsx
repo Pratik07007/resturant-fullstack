@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
@@ -16,7 +17,9 @@ function Nav() {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex gap-4 lg:gap-10 items-center text-sm lg:text-xl">
-            <h1 className="cursor-pointer">Reservation</h1>
+            <Link href="/reservation">
+              <h1 className="cursor-pointer">Reservation</h1>
+            </Link>
             <h1 className="cursor-pointer">Swag</h1>
             <h1 className="cursor-pointer">Menu</h1>
           </div>
@@ -31,6 +34,7 @@ function Nav() {
           </div>
 
           {/* Take Out Button */}
+
           <button className="hidden lg:block bg-pink-500 px-6 lg:px-10 py-2 lg:py-4 rounded-3xl text-xs lg:text-sm text-black hover:bg-pink-700 duration-200">
             Take Out
           </button>
