@@ -1,9 +1,10 @@
+import Image from "next/image";
 import React from "react";
 
 function MenuItemsCard({ category }: { category: string }) {
   return (
     <div className="lg:w-[48%] h-[60vh] w-full relative ">
-      <img
+      <Image
         className="w-full h-full"
         src="https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=800"
         alt=""

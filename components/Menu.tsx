@@ -9,7 +9,6 @@ function Menu() {
         <MenuItemsCard category="Drinks" />
         <MenuItemsCard category="Drinks" />
         <MenuItemsCard category="Drinks" />
-        
       </div>
     </div>
   );

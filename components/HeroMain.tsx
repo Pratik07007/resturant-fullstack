@@ -1,9 +1,10 @@
+import Image from "next/image";
 import React from "react";
 
 function HeroMain() {
   return (
     <div className="h-[calc(100vh-250px)] flex items-center justify-center">
-      <img
+      <Image
         alt=""
         className="h-full w-screen"
         src="https://images.squarespace-cdn.com/content/v1/61aa60502b7f5f4d6d1ce8c9/eedfe239-778c-4f9d-b125-3a4f58df378d/Elmer_duotone_2500x1500.jpg"
