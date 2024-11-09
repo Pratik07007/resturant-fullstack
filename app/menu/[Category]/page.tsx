@@ -1,9 +1,10 @@
 import MenuCard from "@/components/MenuCard";
 import Select from "@/components/Select";
+
 import prisma from "@/db";
 import React from "react";
 
-async function Menu({ params }) {
+async function Menu({ params }: any) {
   const slug = await params?.Category;
   const menuItems = await prisma.menu.findMany({
     where: {
@@ -12,7 +13,9 @@ async function Menu({ params }) {
   });
   return (
     <div className="w-screen min-h-[60vh] pb-10 bg-gray-600 pt-32">
-      <Select />
+      <div className="w-screen flex items-end justify-end pr-10">
+        <Select />
+      </div>
       <div className="flex flex-wrap justify-center items-center">
         {menuItems.map((item) => (
           <MenuCard
