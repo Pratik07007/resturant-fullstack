@@ -10,7 +10,9 @@ function TakeOutButton() {
     if (isSignedIn) {
       return redirect("/menu");
     } else {
-      return redirect(signInPage);
+      return redirect(
+        "https://vital-caiman-0.accounts.dev/sign-in?redirect_url=/"
+      );
     }
   };
   return (
