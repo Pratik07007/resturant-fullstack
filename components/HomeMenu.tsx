@@ -1,6 +1,4 @@
 import React from "react";
-import MenuItemsCard from "./HomeMenuCard";
-import prisma from "@/db";
 import HomeMenuCard from "./HomeMenuCard";
 
 async function Menu() {

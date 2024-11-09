@@ -25,7 +25,9 @@ function Nav() {
               <h1 className="cursor-pointer">Reservation</h1>
             </Link>
             <h1 className="cursor-pointer">Swag</h1>
-            <h1 className="cursor-pointer">Menu</h1>
+            <Link href={"/menu/DRINK"}>
+              <h1 className="cursor-pointer">Menu</h1>
+            </Link>
           </div>
         </div>
 

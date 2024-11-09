@@ -8,7 +8,7 @@ function TakeOutButton() {
   const { isSignedIn } = useAuth();
   const handelClick = () => {
     if (isSignedIn) {
-      return redirect("/menu");
+      return redirect("/menu/DRINK");
     } else {
       return redirect(signInPage);
     }
