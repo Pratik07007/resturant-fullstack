@@ -1,16 +1,25 @@
 import MenuCard from "@/components/MenuCard";
 import Select from "@/components/Select";
-
 import prisma from "@/db";
+import { MenuCategory } from "@prisma/client";
 import React from "react";
 
-async function Menu({ params }: any) {
-  const slug = await params?.Category;
-  const menuItems = await prisma.menu.findMany({
-    where: {
-      category: slug,
-    },
-  });
+interface MenuPageProps {
+  searchParams: {
+    category?: MenuCategory;
+  };
+}
+
+async function Menu({ searchParams }: MenuPageProps) {
+  const category = searchParams?.category;
+  const menuItems = category
+    ? await prisma.menu.findMany({
+        where: {
+          category: category,
+        },
+      })
+    : await prisma.menu.findMany({});
+
   return (
     <div className="w-screen min-h-[60vh] pb-10 bg-gray-600 pt-32">
       <div className="w-screen flex items-end justify-end pr-10">
