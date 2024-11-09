@@ -4,6 +4,8 @@ import React, { useState } from "react";
 
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import { HiMenu, HiX } from "react-icons/hi"; // Hamburger and Close icons
+import TakeOutButton from "./TakeOutButton";
+import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false); // State to manage menu open/close
@@ -13,7 +15,9 @@ function Nav() {
       <div className="flex items-center justify-between h-20 lg:h-28 px-4 lg:px-8 font-light">
         <div className="flex items-center gap-8 lg:gap-20">
           {/* Logo */}
-          <h1 className="text-2xl lg:text-4xl cursor-pointer">Logo</h1>
+          <Link href={"/"}>
+            <h1 className="text-2xl lg:text-4xl cursor-pointer">Logo</h1>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex gap-4 lg:gap-10 items-center text-sm lg:text-xl">
@@ -35,9 +39,17 @@ function Nav() {
 
           {/* Take Out Button */}
 
-          <button className="hidden lg:block bg-pink-500 px-6 lg:px-10 py-2 lg:py-4 rounded-3xl text-xs lg:text-sm text-black hover:bg-pink-700 duration-200">
-            Take Out
-          </button>
+          <TakeOutButton />
+          <SignedOut>
+            <SignInButton>
+              <button className="hidden lg:block bg-pink-500 px-4 lg:px-5 py-2 lg:py-4 rounded-3xl text-xs lg:text-sm text-black hover:bg-pink-700 duration-200">
+                SignIn
+              </button>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
 
           {/* Hamburger Icon for Mobile */}
           <div className="lg:hidden flex items-center">
