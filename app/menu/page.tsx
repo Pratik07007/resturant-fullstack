@@ -4,14 +4,14 @@ import prisma from "@/db";
 import { MenuCategory } from "@prisma/client";
 import React from "react";
 
-interface MenuPageProps {
-  searchParams: {
+async function Menu({
+  searchParams,
+}: {
+  searchParams: Promise<{
     category?: MenuCategory;
-  };
-}
-
-async function Menu({ searchParams }: MenuPageProps) {
-  const { category } = searchParams;
+  }>;
+}) {
+  const category = (await searchParams).category;
   const menuItems = category
     ? await prisma.menu.findMany({
         where: {

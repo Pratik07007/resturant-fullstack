@@ -52,6 +52,11 @@ function Nav() {
           <SignedIn>
             <UserButton />
           </SignedIn>
+          <Link href={"/cart"}>
+            <button className="hidden lg:block bg-pink-500 px-4 lg:px-5 py-2 lg:py-4 rounded-3xl text-xs lg:text-sm text-black hover:bg-pink-700 duration-200">
+              Check Out
+            </button>
+          </Link>
 
           {/* Hamburger Icon for Mobile */}
           <div className="lg:hidden flex items-center">
