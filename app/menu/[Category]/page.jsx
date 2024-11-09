@@ -4,8 +4,9 @@ import Select from "@/components/Select";
 import prisma from "@/db";
 import React from "react";
 
-async function Menu({ params }: any) {
-  const slug = await params?.Category;
+
+async function Menu({ params }) {
+  const slug =  params?.Category;
   const menuItems = await prisma.menu.findMany({
     where: {
       category: slug,
