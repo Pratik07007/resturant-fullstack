@@ -1,12 +1,15 @@
 import React from "react";
 import hero from "../public/hero-main.jpg";
 import Image from "next/image";
+import AddToCartButton from "./AddToCartButton";
 
 function MenuCard({
+  id,
   name,
   price,
   desc,
 }: {
+  id: string;
   name: string;
   price: string;
   desc: string;
@@ -26,12 +29,7 @@ function MenuCard({
         <p className="mb-3 font-normal text-black dark:text-gray-400">
           ${price}
         </p>
-        <a
-          href="#"
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Add to cart
-        </a>
+        <AddToCartButton id={id} name={name} price={price} desc={desc} />
       </div>
     </div>
   );

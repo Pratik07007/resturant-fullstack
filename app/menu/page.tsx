@@ -28,6 +28,7 @@ async function Menu({ searchParams }: MenuPageProps) {
       <div className="flex flex-wrap justify-center items-center">
         {menuItems.map((item) => (
           <MenuCard
+            id={item.id}
             key={item.id}
             name={item.name}
             price={item.price}
