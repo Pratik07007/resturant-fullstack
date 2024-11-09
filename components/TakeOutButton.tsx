@@ -4,7 +4,6 @@ import { redirect } from "next/navigation";
 import React from "react";
 
 function TakeOutButton() {
-  const signInPage = process.env.SIGNIN_PAGE || "";
   const { isSignedIn } = useAuth();
   const handelClick = () => {
     if (isSignedIn) {
