@@ -1,12 +1,12 @@
 import HeroMain from "@/components/HeroMain";
-import Menu from "@/components/Menu";
+import HomeMenu from "@/components/HomeMenu";
 import React from "react";
 
 function Hero() {
   return (
     <div>
       <HeroMain />
-      <Menu />
+      <HomeMenu />
     </div>
   );
 }

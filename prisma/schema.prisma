@@ -7,20 +7,28 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Table {
-  id          Int          @id @default(autoincrement())
-  tableNo     String
-  capacity    Int
+model Menu {
+  id          String       @id @default(cuid())
+  name        String
+  price       String
   isAvailable Boolean      @default(true)
-  customer    Customer?
+  desciption  String
+  category    MenuCategory
 }
 
-model Customer {
-  id          Int       @id @default(autoincrement())
-  fullName    String
-  phone       String
-  bookedTable Int      @unique
-  table       Table    @relation(fields: [bookedTable], references: [id])
+enum MenuCategory {
+  DRINK
+  DESSERT
+  VEG
+  NON_VEG
+  APPETIZER
+  MAIN_COURSE
+  SALAD
+  SOUP
+  SNACK
+  SEAFOOD
+  PASTA
+  PIZZA
+  GRILL
+  BEVERAGE
 }
-
-
