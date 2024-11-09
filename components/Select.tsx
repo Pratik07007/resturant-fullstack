@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { MenuCategory } from "@prisma/client";
 import { redirect } from "next/navigation";
 
@@ -8,13 +8,16 @@ const MenuSelect = () => {
   return (
     <select
       onChange={(e) => {
+        if (e.target.value === "Select a category") {
+          return redirect(`/menu`);
+        }
         redirect(`/menu?category=${e.target.value}`);
       }}
     >
-      <option disabled>Select a category</option>
+      <option>Select a category</option>
       {categories.map((category) => (
         <option key={category} value={category}>
-          {category.replace("_", " ")}{" "}
+          {category.replace("_", " ")}
         </option>
       ))}
     </select>

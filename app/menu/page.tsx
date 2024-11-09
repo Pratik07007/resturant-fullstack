@@ -11,7 +11,7 @@ interface MenuPageProps {
 }
 
 async function Menu({ searchParams }: MenuPageProps) {
-  const category = searchParams?.category;
+  const { category } = searchParams;
   const menuItems = category
     ? await prisma.menu.findMany({
         where: {
