@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
+import { RecoilRoot } from "recoil";
 
 export const metadata: Metadata = {
   title: "Create Next App",
